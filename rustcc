@@ -1,7 +1,17 @@
+#!/bin/bash
 
-if [ ! -d "./target" ]; then
-	mkdir "./target"
+file_name=$1
+
+target="./target"
+
+if [[ ! -d $target ]] 
+then
+	mkdir $target 
 fi
 
-rustc --out-dir ./target $1
+rustc --out-dir $target $file_name
+
+bin_path="${target}/${file_name%.rs*}"
+
+$bin_path
 
