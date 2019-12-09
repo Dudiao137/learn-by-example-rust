@@ -1,0 +1,7 @@
+
+if [ ! -d "./target" ]; then
+	mkdir "./target"
+fi
+
+rustc --out-dir ./target $1
+
